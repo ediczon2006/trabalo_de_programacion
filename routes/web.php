@@ -1,7 +1,8 @@
 <?php
+use App\Http\Controllers\CursoController;
 
-use Illuminate\Support\Facades\Route;
+// Ruta para mostrar la lista de cursos
+Route::get('/academika', [CursoController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Ruta para ver el detalle del curso
+Route::get('/curso/{id}', [CursoController::class, 'show']);
